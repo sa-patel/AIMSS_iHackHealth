@@ -22,7 +22,7 @@ with mp_face_mesh.FaceMesh(
       continue
     annotated_image = image.copy()
     for face_landmarks in results.multi_face_landmarks:
-      print('face_landmarks:', face_landmarks)
+      # print('face_landmarks_length:', len(face_landmarks))
       mp_drawing.draw_landmarks(
           image=annotated_image,
           landmark_list=face_landmarks,
@@ -72,13 +72,20 @@ with mp_face_mesh.FaceMesh(
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     if results.multi_face_landmarks:
       for face_landmarks in results.multi_face_landmarks:
-        mp_drawing.draw_landmarks(
-            image=image,
-            landmark_list=face_landmarks,
-            connections=mp_face_mesh.FACEMESH_TESSELATION,
-            landmark_drawing_spec=None,
-            connection_drawing_spec=mp_drawing_styles
-            .get_default_face_mesh_tesselation_style())
+        left_iris_x = (face_landmarks[474].x+face_landmarks[475].x+face_landmarks[476].x+face_landmarks[477].x)/4
+        left_iris_y = (face_landmarks[474].y+face_landmarks[475].y+face_landmarks[476].y+face_landmarks[477].y)/4
+
+        right_iris_x = (face_landmarks[469].x+face_landmarks[470].x+face_landmarks[471].x+face_landmarks[472].x)/4
+        right_iris_y = (face_landmarks[469].y+face_landmarks[470].y+face_landmarks[471].y+face_landmarks[472].y)/4
+        
+        # print(face_landmarks)
+        # mp_drawing.draw_landmarks(
+        #     image=image,
+        #     landmark_list=face_landmarks,
+        #     connections=mp_face_mesh.FACEMESH_TESSELATION,
+        #     landmark_drawing_spec=None,
+        #     connection_drawing_spec=mp_drawing_styles
+        #     .get_default_face_mesh_tesselation_style())
         mp_drawing.draw_landmarks(
             image=image,
             landmark_list=face_landmarks,
