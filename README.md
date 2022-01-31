@@ -1,8 +1,6 @@
 # AIMSS_iHackHealth
 AIMSS:The AI-based Mobile Stroke Scale for 2022 UCSF iHackHealth
 
-Project for the iHackHealth project. Aim of the project is to 2022 UCSF iHackHealth
-
 In collaboration with Apple, UC Berkeley, UCSF, Peter Hadar MD, Lohith Kini MD
 
 "Purpose
