@@ -122,12 +122,7 @@ with mp_holistic.Holistic(
 
       print('right_eye: ', right_eye_dist)
       print('left_eye: ', left_eye_dist)
-
-    
-
-
-  
-        
+      
     # Flip the image horizontally for a selfie-view display.
     cv2.imshow('MediaPipe Holistic', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
